@@ -1,14 +1,6 @@
 <?php
 
 
-
-class App{
-    public static $base_url = "http://myfrawq.local/";
-    public static $current_action = "";
-    
-    
-}
-
 // Load All Configuration files
 foreach (glob(__DIR__ . '/config/*.php') as $filename) {
     require_once $filename;
@@ -29,13 +21,9 @@ foreach (glob(__DIR__ . '/controllers/*.php') as $filename) {
     require_once $filename;
 }
 
-
-
 use Config\Routes,
     Config\Filters,
     Database\DB;
-
-
 
 class Main {
 
