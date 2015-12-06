@@ -11,9 +11,21 @@ Installation:
   "src\config\app.php" and update base_url variable with the server address you have added in vhosts
 - Hit url in browser. If it says 'Welcome', then you have successfully configure frawq on your machine.
 
+Help:
+  I have created sample IndexController, it contains few actions to help you in your development. Added few Views to show how views works. 
+  
+  To understand the life cycle of framework. Following steps will be helpfull
+  
+  - Start with the file 'src/config/routes.php', you will see index '/' that means HOME page identifier. This index will tell which action to trigger. That action will tell which view to render.
+  
+  - Index '/' in route file has an array value. That array contains 'uses' index.   This will tell which action of particular Controller is to call. e.g 'uses' => '\Controller\IndexController@index'
+
+  Let me explain you how it works. Divide the 'uses' value on the basis of @. Then it has two parts, first:   '\Controller\IndexController' and second: 'index'. First part is the path to the Controller and second part is the action within that controller file.
+
+
 Directory Structure:
 - src
-  -config
+  - config
     - app.php 
     // Assign complete base url of your new site to base_url. You can access the $base_url variable any where in views
     // e.g <?php echo \App::$base_url ?>assets/js/some.js
