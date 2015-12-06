@@ -10,7 +10,7 @@ class Filters{
             return true;
         }else{
             
-            $home = View::make('login');
+            $home = View::make('forms.login');
             return View::make('main', array('content' => $home));
         }
     }
