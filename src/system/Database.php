@@ -21,14 +21,18 @@ class DB{
             return self::$dbconnection;
         }
         
-        if(empty($cname)){
-            $dbSettings = !empty(DBSettings::$settings['mysql']) ? DBSettings::$settings['mysql'] : true;
-        }else{
+        $dbSettings = null;
+        
+        if(empty($cname) && !empty(DBSettings::$settings['mysql'])){
+            // get default DB settings added with under index 'mysql'
+            $dbSettings = DBSettings::$settings['mysql'];
+        }elseif(!empty($cname)){
             $dbSettings = (!empty(DBSettings::$settings[$cname])) ? DBSettings::$settings[$cname] : false ;
         }
         
-        if($dbSettings){
+        if(empty($dbSettings)){
             self::$mysql_error = "Please provide database information under file 'database' placed under config folder";
+            return false;
         }
 
         try {
