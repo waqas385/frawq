@@ -22,7 +22,7 @@ class DB{
         }
         
         if(empty($cname)){
-            $dbSettings = DBSettings::$settings['mysql'];
+            $dbSettings = !empty(DBSettings::$settings['mysql']) ? DBSettings::$settings['mysql'] : true;
         }else{
             $dbSettings = (!empty(DBSettings::$settings[$cname])) ? DBSettings::$settings[$cname] : false ;
         }
