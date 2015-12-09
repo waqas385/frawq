@@ -11,7 +11,7 @@ class IndexController extends \System\Controller {
      * action index
      */
     public function index() {
-        return View::make('main', array('content' => 'Welcome Developer!'));
+        return View::make('main', array('content' => '<h1>Welcome Developer!</h1>'));
     }
 
     /*

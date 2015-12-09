@@ -20,8 +20,10 @@
 
     </head>
     <body>
+        <?php echo \App::showMessage(); ?>
         <!-- Inner Content of Dynamic Page -->
-        <div class="container">
+        <div class="container text-center">
+            <img src="<?php echo \App::$base_url ?>assets/images/developer.jpg"/>
             <?php echo $content ?>
         </div>
         

@@ -5,5 +5,29 @@ class App{
     // in my case it is : 
     public static $base_url = "http://frawq.loc/";
     public static $current_action = "";
-
+    public static $message = "";
+    public static $message_type = "";
+    
+    public static function showMessage(){
+        $message = self::$message;
+        $type = "alert-info";
+        switch(self::$message_type){
+            case "info":
+                $type = "alert-info";
+                break;
+            case "warning":
+                $type = "alert-warning";
+                break;
+            case "success":
+                $type = "alert-success";
+                break;
+            case "danger":
+            case "error":
+                $type = "alert-danger";
+                break;
+        }
+        
+        return !empty($message) ? $message = '<div class="container "><div class="col-sm-6 col-sm-offset-3 alert '.$type.'" role="alert"> '.$message.' </div></div>' : "";
+        
+    }
 }

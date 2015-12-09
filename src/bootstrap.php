@@ -110,7 +110,7 @@ class Main {
 
         // DB connection
         if(!DB::connection()){
-            echo DB::$mysql_error."<br/>";
+            App::$message = DB::$mysql_error;
         }
         
         // Initialize class and call its action method
