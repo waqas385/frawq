@@ -109,9 +109,7 @@ class Main {
         }
 
         // DB connection
-        if(!DB::connection()){
-            App::$message = DB::$mysql_error;
-        }
+        DB::connection();
         
         // Initialize class and call its action method
         $class = $classPath;

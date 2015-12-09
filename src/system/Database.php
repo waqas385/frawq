@@ -31,7 +31,8 @@ class DB{
         }
         
         if(empty($dbSettings)){
-            self::$mysql_error = "Please provide database information under file 'database' placed under config folder";
+            \App::$message =  self::$mysql_error = "Please provide database information under file 'database' placed under config folder";
+            \App::$message_type = 'info';
             return false;
         }
 
@@ -39,7 +40,8 @@ class DB{
             $dbconnection = mysqli_connect($dbSettings['server'], $dbSettings['username'], $dbSettings['password'], $dbSettings['database']);
             mysqli_set_charset($dbconnection,'utf8');
             if (mysqli_connect_errno()){
-                self::$mysql_error = "Could not connect :". mysqli_connect_error();
+                \App::$message = self::$mysql_error = "Could not connect :". mysqli_connect_error();
+                \App::$message_type = 'error';
             }
             return self::$dbconnection = $dbconnection;
             
@@ -52,7 +54,8 @@ class DB{
     
     public static function statement($query){
         if(empty(self::$dbconnection)){
-            self::$mysql_error = "Connection lost, please connect to database again";
+            \App::$message = self::$mysql_error = "Connection lost, please connect to database again";
+            \App::$message_type = 'error';
             return false;
         }
         

@@ -27,7 +27,7 @@ class App{
                 break;
         }
         
-        return !empty($message) ? $message = '<div class="container "><div class="col-sm-6 col-sm-offset-3 alert '.$type.'" role="alert"> '.$message.' </div></div>' : "";
+        return !empty($message) ? $message = '<div class="col-sm-6 col-sm-offset-3 alert '.$type.'" role="alert"> '.$message.' </div>' : "";
         
     }
 }
