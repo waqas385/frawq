@@ -25,9 +25,10 @@
         <div class="container text-center">
             <?php echo \App::showMessage(); ?>
             <div class="clearfix"></div>
-            <img src="<?php echo \App::$base_url ?>assets/images/developer.jpg"/>
+            <img src="<?php echo \App::$base_url ?>assets/img/developer.jpg"/>
             <div class="clearfix"></div>
             <?php echo $content ?>
+            
         </div>
         
     </body>
