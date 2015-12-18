@@ -44,5 +44,4 @@ class Language{
     public static function get($arrName){
         return isset(self::$lang[$arrName]) ? self::$lang[$arrName] : "";
     }
-    
 }
