@@ -297,5 +297,4 @@ class Model{
         }
         return $data;
     }
-
 }
